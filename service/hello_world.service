@@ -1,0 +1,10 @@
+[Unit]
+Description=Hello World Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/glolabs/python-service/src/hello_world.py
+
+[Install]
+WantedBy=multi-user.target
