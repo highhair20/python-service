@@ -9,7 +9,7 @@ sudo apt autoremove
 sudo apt clean
 
 # Create a symlink so that the system sees your app as a service
-ls -s /opt/glolabs/python-service/system/helloworld.service /etc/systemd/system/helloworld.service
+ln -s /opt/glolabs/python-service/system/helloworld.service /etc/systemd/system/helloworld.service
 
 # Set the app to run on reboot
 sudo systemctl enable helloworld.service   # Sets the script to run every boot
