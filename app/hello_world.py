@@ -1,8 +1,14 @@
 import time
 from datetime import datetime
 
+starttime = time.time()
 while True:
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    print(current_time + " - Hello World!")
-    time.sleep(1.0)
+
+    file = open("/var/log/messages", "a")  
+    file.write(current_time + " - Hello World! \n")
+    file.close()
+
+    # Remove the Time taken by code to execute
+    time.sleep(10.0 - ((time.time() - starttime) % 10.0))
