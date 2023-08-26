@@ -8,10 +8,12 @@ sudo apt autoremove
 # Discard any unneeded files that have been downloaded as part of the upgrade.
 sudo apt clean
 
+# Create a symlink so that the system sees your app as a service
+ls -s /opt/glolabs/python-service/system/helloworld.service
+
 # Set the app to run on reboot
-ls -s
-sudo systemctl start /opt/verkundenbot/device/healthcheck.py    # Runs the script now
-sudo systemctl enable /opt/verkundenbot/device/healthcheck.py   # Sets the script to run every boot
+sudo systemctl enable helloworld.service   # Sets the script to run every boot
+sudo systemctl start helloworld.service    # Runs the script now
 
 # Finish by restarting:
 sudo reboot

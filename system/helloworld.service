@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/opt/glolabs/python-service/src/hello_world.py
+ExecStart=/usr/bin/python3 /opt/glolabs/python-service/app/hello_world.py
 
 [Install]
 WantedBy=multi-user.target
