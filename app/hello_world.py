@@ -6,7 +6,7 @@ while True:
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 
-    file = open("/var/log/messages", "a")  
+    file = open("/var/log/messages", "a")
     file.write(current_time + " - Hello World! \n")
     file.close()
 
